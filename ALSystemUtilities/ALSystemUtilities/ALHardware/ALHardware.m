@@ -64,7 +64,7 @@
     uname(&systemInfo);
     NSString *result = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     NSString *type;
-    if ([result isEqualToString:@"i386"])           type = @"Simulator";
+    if ([result isEqualToString:@"i386"] || [result isEqualToString:@"x86_64"])           type = @"Simulator";
     if ([result isEqualToString:@"iPod3,1"])        type = @"iPod Touch 3";
     if ([result isEqualToString:@"iPod4,1"])        type = @"iPod Touch 4";
     if ([result isEqualToString:@"iPod5,1"])        type = @"iPod Touch 5";
@@ -97,6 +97,14 @@
         [result isEqualToString:@"iPhone5,4"])      type = @"iPhone 5c";
     if ([result isEqualToString:@"iPhone7,2"])      type = @"iPhone 6";
     if ([result isEqualToString:@"iPhone7,1"])      type = @"iPhone 6 Plus";
+    if ([result isEqualToString:@"iPhone8,1"])      type = @"iPhone 6s";
+    if ([result isEqualToString:@"iPhone8,2"])      type = @"iPhone 6s Plus";
+    if ([result isEqualToString:@"iPhone8,4"])      type = @"iPhone SE";
+    
+    if ([result isEqualToString:@"iPhone9,1"]   ||
+        [result isEqualToString:@"iPhone9,3"])      type = @"iPhone 7";
+    if ([result isEqualToString:@"iPhone9,2"]   ||
+        [result isEqualToString:@"iPhone9,4"])      type = @"iPhone 7 Plus";
     
     if (!type) {
         NSInteger index = MAX([result rangeOfString:@"iPhone"].length, [result rangeOfString:@"iPad"].length);
@@ -111,12 +119,35 @@
     return type;
 }
 
++ (NSTimeInterval)bootTimeInterval {
+    
+    /*
+    // Get the info about a process
+    NSProcessInfo * processInfo = [NSProcessInfo processInfo];
+    // Get the uptime of the system
+    NSTimeInterval UptimeInterval = [processInfo systemUptime];
+    // Return the UptimeInterval  //这个不包含休眠时间，故修改为下面的实现。
+     */
+    struct timeval boottime;
+    int mib[2] = {CTL_KERN, KERN_BOOTTIME};
+    size_t size = sizeof(boottime);
+    time_t now;
+    time_t uptime = -1;
+    (void)time(&now);
+    if (sysctl(mib, 2, &boottime, &size, NULL, 0) != -1 && boottime.tv_sec != 0){
+        uptime = now - boottime.tv_sec;
+    }
+    return uptime;
+}
+
 + (NSString *)bootTime {
-    NSInteger ti = (NSInteger)[[NSProcessInfo processInfo] systemUptime];
-    NSInteger seconds = ti % 60;
+    
+    NSInteger ti = (NSInteger)[self bootTimeInterval];
+//    NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
-    NSInteger hours = (ti / 3600);
-    return [NSString stringWithFormat:@"%02li:%02li:%02li", (long)hours, (long)minutes, (long)seconds];
+    NSInteger hours = (ti / 3600) % 24;
+    NSInteger days = (ti / 3600 / 24);
+    return [NSString stringWithFormat:@"%ld %ld %ld", (long)days, (long)hours, (long)minutes];
 }
 
 + (BOOL)proximitySensor {

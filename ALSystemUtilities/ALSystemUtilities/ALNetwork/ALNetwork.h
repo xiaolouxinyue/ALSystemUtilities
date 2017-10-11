@@ -50,6 +50,12 @@
 + (NSString *)cellIPAddress;
 
 /*!
+ * The wifi IP address
+ @return NSString represents the wifi IP address
+ */
++ (NSString *)wiFiIPAddress;
+
+/*!
  * The WiFi netmask address
  @return NSString represents the WiFi netmask address
  */

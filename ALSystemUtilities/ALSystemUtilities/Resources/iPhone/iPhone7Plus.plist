@@ -5,23 +5,23 @@
 	<key>standby</key>
 	<string>384</string>
 	<key>conversation3g</key>
-	<string>24</string>
+	<string>21</string>
 	<key>conversation2g</key>
 	<string>44</string>
 	<key>internet3g</key>
-	<string>12</string>
+	<string>13</string>
 	<key>internetwifi</key>
-	<string>12</string>
+	<string>15</string>
 	<key>video</key>
-	<string>12</string>
+	<string>14</string>
 	<key>audio</key>
-	<string>80</string>
+	<string>60</string>
 	<key>sim</key>
 	<string>Nano-SIM</string>
 	<key>dimensions</key>
-	<string>158,1 x 77,8 x 7,1 (mm)</string>
+	<string>158,2 x 77,9 x 7,3 (mm)</string>
 	<key>weight</key>
-	<string>172 g.</string>
+	<string>188 g.</string>
 	<key>display-type</key>
 	<string>Retina HD</string>
 	<key>display-density</key>
@@ -35,7 +35,7 @@
 	<key>camera-secondary</key>
 	<string>1.2 MP</string>
 	<key>cpu</key>
-	<string>Apple A8 64 bit / M8</string>
+	<string>Apple A10 Fusion 64 bit / M10</string>
 	<key>gpu</key>
 	<string>PowerVR GX6650 (hexa-core graphics)</string>
 	<key>siri</key>

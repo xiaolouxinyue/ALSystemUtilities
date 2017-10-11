@@ -10,7 +10,6 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-#import "Reachability.h"
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 #include <net/if.h>
@@ -83,23 +82,29 @@
 }
 
 + (BOOL)connectedViaWiFi {
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    [reachability startNotifier];
-    NetworkStatus status = [reachability currentReachabilityStatus];
-    if (status == ReachableViaWiFi)
-        return YES;
-    else
-        return NO;
+    // Check if we're connected to WiFi
+    NSString *WiFiAddress = [self wiFiIPAddress];
+    // Check if the string is populated
+    if (WiFiAddress == nil || WiFiAddress.length <= 0) {
+        // Nothing found
+        return false;
+    } else {
+        // WiFi in use
+        return true;
+    }
 }
 
 + (BOOL)connectedVia3G {
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    [reachability startNotifier];
-    NetworkStatus status = [reachability currentReachabilityStatus];
-    if (status == ReachableViaWWAN)
-        return YES;
-    else
-        return NO;
+    // Check if we're connected to cell network
+    NSString *CellAddress = [self cellIPAddress];
+    // Check if the string is populated
+    if (CellAddress == nil || CellAddress.length <= 0) {
+        // Nothing found
+        return false;
+    } else {
+        // Cellular Network in use
+        return true;
+    }
 }
 
 /*! Obsolete in iOS 7 */
@@ -272,6 +277,64 @@
     
     // Return the IP Address of the WiFi
     return IPAddress;
+}
+
+// Get WiFi IP Address
++ (NSString *)wiFiIPAddress {
+    // Get the WiFi IP Address
+    @try {
+        // Set a string for the address
+        NSString *IPAddress;
+        // Set up structs to hold the interfaces and the temporary address
+        struct ifaddrs *Interfaces;
+        struct ifaddrs *Temp;
+        // Set up int for success or fail
+        int Status = 0;
+        
+        // Get all the network interfaces
+        Status = getifaddrs(&Interfaces);
+        
+        // If it's 0, then it's good
+        if (Status == 0)
+        {
+            // Loop through the list of interfaces
+            Temp = Interfaces;
+            
+            // Run through it while it's still available
+            while(Temp != NULL)
+            {
+                // If the temp interface is a valid interface
+                if(Temp->ifa_addr->sa_family == AF_INET)
+                {
+                    // Check if the interface is WiFi
+                    if([[NSString stringWithUTF8String:Temp->ifa_name] isEqualToString:@"en0"])
+                    {
+                        // Get the WiFi IP Address
+                        IPAddress = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)Temp->ifa_addr)->sin_addr)];
+                    }
+                }
+                
+                // Set the temp value to the next interface
+                Temp = Temp->ifa_next;
+            }
+        }
+        
+        // Free the memory of the interfaces
+        freeifaddrs(Interfaces);
+        
+        // Check to make sure it's not empty
+        if (IPAddress == nil || IPAddress.length <= 0) {
+            // Empty, return not found
+            return nil;
+        }
+        
+        // Return the IP Address of the WiFi
+        return IPAddress;
+    }
+    @catch (NSException *exception) {
+        // Error, IP Not found
+        return nil;
+    }
 }
 
 + (NSString *)WiFiNetmaskAddress {

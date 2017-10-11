@@ -34,5 +34,9 @@
 	<string>No</string>
 	<key>sim</key>
 	<string>Micro-SIM</string>
+    <key>resolution</key>
+    <string>1920 x 1080</string>
+    <key>screen-size</key>
+    <string>5.5</string>
 </dict>
 </plist>

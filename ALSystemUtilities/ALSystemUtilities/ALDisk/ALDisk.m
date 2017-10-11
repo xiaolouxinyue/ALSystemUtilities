@@ -8,7 +8,8 @@
 
 #import "ALDisk.h"
 
-#define MB (1024*1024)
+#define KB (1024)
+#define MB (KB*1024)
 #define GB (MB*1024)
 
 @implementation ALDisk
@@ -18,12 +19,15 @@
 + (NSString *)memoryFormatter:(long long)diskSpace {
     NSString *formatted;
     double bytes = 1.0 * diskSpace;
+    double kilobytes = bytes / KB;
     double megabytes = bytes / MB;
     double gigabytes = bytes / GB;
     if (gigabytes >= 1.0)
         formatted = [NSString stringWithFormat:@"%.2f GB", gigabytes];
     else if (megabytes >= 1.0)
         formatted = [NSString stringWithFormat:@"%.2f MB", megabytes];
+    else if (kilobytes >= 1.0)
+        formatted = [NSString stringWithFormat:@"%.2f KB", kilobytes];
     else
         formatted = [NSString stringWithFormat:@"%.2f bytes", bytes];
     

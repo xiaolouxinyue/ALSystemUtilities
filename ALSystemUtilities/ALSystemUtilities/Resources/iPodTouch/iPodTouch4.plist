@@ -26,5 +26,9 @@
 	<string>Apple A4 800 MHz</string>
 	<key>gpu</key>
 	<string>PowerVR SGX</string>
+    <key>resolution</key>
+    <string>1920 x 1080</string>
+    <key>screen-size</key>
+    <string>5.5</string>
 </dict>
 </plist>
