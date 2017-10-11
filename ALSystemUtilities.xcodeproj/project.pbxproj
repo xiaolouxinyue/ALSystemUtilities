@@ -61,8 +61,6 @@
 		87D8E5181821577E00546E6D /* ALSystem_NetworkConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 87D8E4E81821577E00546E6D /* ALSystem_NetworkConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87D8E5191821577E00546E6D /* ALSystem_ProcessorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 87D8E4E91821577E00546E6D /* ALSystem_ProcessorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87D8E51A1821577E00546E6D /* ALSystemConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 87D8E4EA1821577E00546E6D /* ALSystemConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87D8E51B1821577E00546E6D /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 87D8E4EC1821577E00546E6D /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		87D8E51C1821577E00546E6D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D8E4ED1821577E00546E6D /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		87D8E51D1821577E00546E6D /* iPhone3Gs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87D8E4F01821577E00546E6D /* iPhone3Gs.plist */; };
 		87D8E51E1821577E00546E6D /* iPhone4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87D8E4F11821577E00546E6D /* iPhone4.plist */; };
 		87D8E51F1821577E00546E6D /* iPhone4s.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87D8E4F21821577E00546E6D /* iPhone4s.plist */; };
@@ -77,6 +75,14 @@
 /* Begin PBXFileReference section */
 		6506F3391B52F49F006A13A2 /* ALSystemUtilities.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ALSystemUtilities.podspec; sourceTree = SOURCE_ROOT; };
 		65F4810F1B5D4A990051FFD8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6F8CC4E91F8DF0B3003DA833 /* iPhone7.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhone7.plist; sourceTree = "<group>"; };
+		6F8CC4EA1F8DF0B3003DA833 /* iPhone6sPlus.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhone6sPlus.plist; sourceTree = "<group>"; };
+		6F8CC4EB1F8DF0B3003DA833 /* iPhone7Plus.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhone7Plus.plist; sourceTree = "<group>"; };
+		6F8CC4EC1F8DF0B3003DA833 /* iPhoneSE.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhoneSE.plist; sourceTree = "<group>"; };
+		6F8CC4ED1F8DF0B3003DA833 /* iPhone6s.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhone6s.plist; sourceTree = "<group>"; };
+		6F8CC4EE1F8DF0E1003DA833 /* iPhone8Plus.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhone8Plus.plist; sourceTree = "<group>"; };
+		6F8CC4EF1F8DF0E1003DA833 /* iPhone8.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhone8.plist; sourceTree = "<group>"; };
+		6F8CC4F01F8DF0E2003DA833 /* iPhoneX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = iPhoneX.plist; sourceTree = "<group>"; };
 		870C1AD1196594B400369031 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8710CC9C18227461009590EE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8710CC9D18227461009590EE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -133,8 +139,6 @@
 		87D8E4E81821577E00546E6D /* ALSystem_NetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSystem_NetworkConstants.h; sourceTree = "<group>"; };
 		87D8E4E91821577E00546E6D /* ALSystem_ProcessorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSystem_ProcessorConstants.h; sourceTree = "<group>"; };
 		87D8E4EA1821577E00546E6D /* ALSystemConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSystemConstants.h; sourceTree = "<group>"; };
-		87D8E4EC1821577E00546E6D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		87D8E4ED1821577E00546E6D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		87D8E4F01821577E00546E6D /* iPhone3Gs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iPhone3Gs.plist; sourceTree = "<group>"; };
 		87D8E4F11821577E00546E6D /* iPhone4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iPhone4.plist; sourceTree = "<group>"; };
 		87D8E4F21821577E00546E6D /* iPhone4s.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iPhone4s.plist; sourceTree = "<group>"; };
@@ -234,7 +238,6 @@
 				87D8E4D71821577E00546E6D /* ALNetwork */,
 				87D8E4DA1821577E00546E6D /* ALProcessor */,
 				87D8E4DF1821577E00546E6D /* ALSystemConstants */,
-				87D8E4EB1821577E00546E6D /* Reachability */,
 				87D8E4EE1821577E00546E6D /* Resources */,
 			);
 			path = ALSystemUtilities;
@@ -348,15 +351,6 @@
 			path = ALSystemConstants;
 			sourceTree = "<group>";
 		};
-		87D8E4EB1821577E00546E6D /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				87D8E4EC1821577E00546E6D /* Reachability.h */,
-				87D8E4ED1821577E00546E6D /* Reachability.m */,
-			);
-			path = Reachability;
-			sourceTree = "<group>";
-		};
 		87D8E4EE1821577E00546E6D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +372,14 @@
 				87D8E4F51821577E00546E6D /* iPhone5s.plist */,
 				87D350B419C61EAA0081F612 /* iPhone6.plist */,
 				87D350B619C6208C0081F612 /* iPhone6Plus.plist */,
+				6F8CC4ED1F8DF0B3003DA833 /* iPhone6s.plist */,
+				6F8CC4EA1F8DF0B3003DA833 /* iPhone6sPlus.plist */,
+				6F8CC4E91F8DF0B3003DA833 /* iPhone7.plist */,
+				6F8CC4EB1F8DF0B3003DA833 /* iPhone7Plus.plist */,
+				6F8CC4EC1F8DF0B3003DA833 /* iPhoneSE.plist */,
+				6F8CC4EF1F8DF0E1003DA833 /* iPhone8.plist */,
+				6F8CC4EE1F8DF0E1003DA833 /* iPhone8Plus.plist */,
+				6F8CC4F01F8DF0E2003DA833 /* iPhoneX.plist */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -438,7 +440,6 @@
 				87D8E5081821577E00546E6D /* ALMemory.h in Headers */,
 				87D8E5121821577E00546E6D /* ALSystem_CarrierConstants.h in Headers */,
 				87D8E5001821577E00546E6D /* ALDisk.h in Headers */,
-				87D8E51B1821577E00546E6D /* Reachability.h in Headers */,
 				87D8E4FE1821577E00546E6D /* ALCarrier.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,7 +543,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D8E51C1821577E00546E6D /* Reachability.m in Sources */,
 				87D8E5091821577E00546E6D /* ALMemory.m in Sources */,
 				87D8E4FD1821577E00546E6D /* ALBattery.m in Sources */,
 				87D8E5071821577E00546E6D /* ALLocalization.m in Sources */,
